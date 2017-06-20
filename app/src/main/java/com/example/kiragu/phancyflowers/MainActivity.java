@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.VideoView;
 
 import com.example.kiragu.phancyflowers.ui.LoginActivity;
+import com.example.kiragu.phancyflowers.ui.SignUpActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

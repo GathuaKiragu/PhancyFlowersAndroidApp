@@ -52,7 +52,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:text="Login"
-        android:background="@drawable/border"
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"/>
 
@@ -64,6 +63,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
         android:text="Dont have an Account? Sign Up here!" />
-
 
 </RelativeLayout>
