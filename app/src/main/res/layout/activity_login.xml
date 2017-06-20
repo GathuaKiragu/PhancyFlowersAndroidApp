@@ -31,7 +31,9 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:ems="10"
-        android:hint="Email"
+        android:drawableLeft="@drawable/ic_account_circle_white_24dp"
+        android:hint=" Email"
+        android:textColorHint="@color/colorWhite"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -42,8 +44,10 @@
         android:layout_alignRight="@+id/emailTextView"
         android:layout_below="@+id/emailTextView"
         android:layout_marginTop="24dp"
-        android:hint="Password"
+        android:hint=" Password"
         android:ems="10"
+        android:drawableLeft="@drawable/ic_https_white_24dp"
+        android:textColorHint="@color/colorWhite"
         android:inputType="textPassword" />
 
     <Button
