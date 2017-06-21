@@ -12,10 +12,10 @@ import com.example.kiragu.phancyflowers.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment extends Fragment {
+public class ProductDetailFragment extends Fragment {
 
 
-    public BlankFragment() {
+    public ProductDetailFragment() {
         // Required empty public constructor
     }
 
