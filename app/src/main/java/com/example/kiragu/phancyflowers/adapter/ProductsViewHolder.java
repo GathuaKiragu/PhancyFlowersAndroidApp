@@ -1,5 +1,6 @@
 package com.example.kiragu.phancyflowers.adapter;
 
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,15 +12,15 @@ import com.example.kiragu.phancyflowers.R;
  * Created by kiragu on 6/21/17.
  */
 
-public class ProductsViewHolder {
-    public TextView countryName;
-    public ImageView countryPhoto;
+public class ProductsViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public TextView productName;
+    public ImageView productPhoto;
 
     public ProductsViewHolder(View itemView) {
         super(itemView);
         itemView.setOnClickListener(this);
-        countryName = (TextView) itemView.findViewById(R.id.product_name);
-        countryPhoto = (ImageView) itemView.findViewById(R.id.product_photo);
+        productName = (TextView) itemView.findViewById(R.id.product_name);
+        productPhoto = (ImageView) itemView.findViewById(R.id.product_photo);
     }
 
     @Override
