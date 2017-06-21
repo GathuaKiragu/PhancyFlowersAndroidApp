@@ -1,10 +1,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -15,21 +16,21 @@
                 android:id="@+id/imgview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/example"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/example" />
 
             <RelativeLayout
                 android:layout_width="150dp"
                 android:layout_height="35dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="0dp"
-                android:background="#80666666"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="0dp"
+                android:background="#80666666">
 
                 <TextView
                     android:id="@+id/text"
@@ -39,29 +40,24 @@
                     android:layout_centerVertical="true"
                     android:text="Rose Flower"
                     android:textColor="#FFFFFF"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </RelativeLayout>
         </RelativeLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="10sp"
             android:text="Lorem ipsum dolor sit amet, sea ea melius reprimique, assum aliquip ornatus duo ad, an delectus consetetur vim. Ex ignota facilis abhorreant has, vim laudem delicatissimi ex. Ei eum virtute utroque nominavi. Ex pri impetus legimus adipiscing.
 No nec tempor altera. An mei omnium atomorum, rebum fastidii vivendum id sea. Ex latine omnesque nam."
-            android:textSize="15sp"
-            android:padding="10sp"/>
+            android:textSize="15sp" />
 
-        <Button
-            android:id="@+id/AddToCart"
-            android:layout_width="237dp"
-            android:layout_height="31dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:background="@drawable/buttonshape"
-            android:gravity="center"
-            android:text="Add To Cart"
-            android:layout_gravity="center"
-            android:drawableLeft="@drawable/ic_shopping_cart_white_24dp"
-            android:textColor="@color/colorWhite" />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:src="@drawable/ic_shopping_cart_white_24dp" />
     </LinearLayout>
 </FrameLayout>

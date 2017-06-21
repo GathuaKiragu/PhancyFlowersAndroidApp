@@ -73,7 +73,6 @@ public class ProductListActivity extends AppCompatActivity {
         listViewItems.add(new Product("Roses", R.drawable.example));
         listViewItems.add(new Product("Roses", R.drawable.example));
         listViewItems.add(new Product("Garden Flowers", R.drawable.example));
-
         return listViewItems;
     }
 }
