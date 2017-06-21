@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.VideoView;
 
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mLoginButton.setOnClickListener(this);
         mSignUpButton.setOnClickListener(this);
+
     }
     @Override
     public void onClick(View v) {

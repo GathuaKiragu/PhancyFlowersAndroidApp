@@ -43,43 +43,41 @@
         android:id="@+id/emailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/nameEditText"
-        android:layout_alignRight="@+id/nameEditText"
-        android:layout_centerVertical="true"
         android:ems="10"
         android:drawableLeft="@drawable/ic_email_white_24dp"
         android:hint=" Email"
         android:textColorHint="@color/colorWhite"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/nameEditText"
+        android:layout_alignLeft="@+id/nameEditText"
+        android:layout_alignStart="@+id/nameEditText" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/emailTextView"
-        android:layout_alignStart="@+id/emailTextView"
-        android:layout_below="@+id/emailTextView"
-        android:layout_marginTop="21dp"
         android:ems="10"
         android:hint=" Password"
         android:drawableLeft="@drawable/ic_https_white_24dp"
         android:textColorHint="@color/colorWhite"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:layout_below="@+id/emailTextView"
+        android:layout_alignLeft="@+id/emailTextView"
+        android:layout_alignStart="@+id/emailTextView" />
 
     <EditText
         android:id="@+id/confirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/password"
-        android:layout_alignRight="@+id/password"
-        android:layout_below="@+id/password"
-        android:layout_marginTop="22dp"
         android:ems="10"
         android:drawableLeft="@drawable/ic_https_white_24dp"
 
         android:hint="Confirm password"
         android:textColorHint="@color/colorWhite"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:layout_below="@+id/password"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignStart="@+id/password" />
 
     <Button
         android:id="@+id/button"
