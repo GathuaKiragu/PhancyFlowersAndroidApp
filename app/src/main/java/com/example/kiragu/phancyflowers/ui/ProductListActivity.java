@@ -1,10 +1,12 @@
 package com.example.kiragu.phancyflowers.ui;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,7 +18,11 @@ import com.example.kiragu.phancyflowers.MainActivity;
 import com.example.kiragu.phancyflowers.R;
 import com.example.kiragu.phancyflowers.adapter.RecyclerViewAdapter;
 import com.example.kiragu.phancyflowers.models.Product;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +34,10 @@ public class ProductListActivity extends AppCompatActivity {
     @Bind(R.id.product_name)
     TextView mProductName;
     @Bind(R.id.product_photo) TextView mProductPhoto;
+    private String mName;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +54,18 @@ public class ProductListActivity extends AppCompatActivity {
 
         RecyclerViewAdapter rcAdapter = new RecyclerViewAdapter(ProductListActivity.this, gaggeredList);
         recyclerView.setAdapter(rcAdapter);
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    getSupportActionBar().setTitle("Welcome, " + user.getDisplayName() + "!");
+                } else {
+
+                }            }
+        };
 
 }
 
@@ -103,5 +125,18 @@ public class ProductListActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 }
