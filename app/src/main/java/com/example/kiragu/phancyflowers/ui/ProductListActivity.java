@@ -79,14 +79,15 @@ public class ProductListActivity extends AppCompatActivity {
         listViewItems.add(new Product("Garden Flowers", R.drawable.example));
         return listViewItems;
     }
-
-    @Override
+//    inflating menu item
+   @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+//Method to sign out  user
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

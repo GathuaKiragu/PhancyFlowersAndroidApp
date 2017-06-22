@@ -116,5 +116,34 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         };
     }
+//Methods to check if email is valid
+    private boolean isValidEmail(String email) {
+        boolean isGoodEmail =
+                (email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches());
+        if (!isGoodEmail) {
+            mEmailEditText.setError("Please enter a valid email address");
+            return false;
+        }
+        return isGoodEmail;
+    }
+//method to validate that user does not input an empty name
+    private boolean isValidName(String name) {
+        if (name.equals("")) {
+            mNameEditText.setError("Please enter your name");
+            return false;
+        }
+        return true;
+    }
+//method to make sure that the user sets a password of more than 8 characters
+    private boolean isValidPassword(String password, String confirmPassword) {
+        if (password.length() < 8) {
+            mPasswordEditText.setError("Please create a password containing at least 6 characters");
+            return false;
+        } else if (!password.equals(confirmPassword)) {
+            mPasswordEditText.setError("Passwords do not match");
+            return false;
+        }
+        return true;
+    }
 
 }
