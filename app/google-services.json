@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "200225840182",
+    "firebase_url": "https://phancy-petals.firebaseio.com",
+    "project_id": "phancy-petals",
+    "storage_bucket": "phancy-petals.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200225840182:android:56cc957b5573e685",
+        "android_client_info": {
+          "package_name": "com.example.kiragu.phancyflowers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200225840182-k8llagu1rbrs53q1ntqgctj6qflldnv3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kiragu.phancyflowers",
+            "certificate_hash": "d4a84e7db0e277f5ae64d291999913d167d8c16d"
+          }
+        },
+        {
+          "client_id": "200225840182-ael9kba1ko0dl67qp2r2j7cavt01ohoe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6At6C7bA3b3g3rRxhXUoQRIEgGiBYwbw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200225840182-ael9kba1ko0dl67qp2r2j7cavt01ohoe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
