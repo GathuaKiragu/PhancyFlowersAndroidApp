@@ -1,5 +1,6 @@
 package com.example.kiragu.phancyflowers.ui;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +39,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     EditText mConfirmPasswordEditText;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private ProgressDialog mAuthProgressDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +50,18 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         mAuth = FirebaseAuth.getInstance();
         createAuthStateListener();
+        createAuthProgressDialog();
 
         mSignUpTextView.setOnClickListener(this);
         mSignUpButton.setOnClickListener(this);
 
+    }
+
+    private void createAuthProgressDialog() {
+        mAuthProgressDialog = new ProgressDialog(this);
+        mAuthProgressDialog.setTitle("Loading...");
+        mAuthProgressDialog.setMessage("Validating your account...");
+        mAuthProgressDialog.setCancelable(false);
     }
 
     @Override
@@ -86,10 +97,19 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         String password = mPasswordEditText.getText().toString().trim();
         String confirmPassword = mConfirmPasswordEditText.getText().toString().trim();
 
+        boolean validEmail = isValidEmail(email);
+        boolean validName = isValidName(name);
+        boolean validPassword = isValidPassword(password, confirmPassword);
+        if (!validEmail || !validName || !validPassword) return;
+
+        mAuthProgressDialog.show();
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        mAuthProgressDialog.dismiss();
+
                         if (task.isSuccessful()) {
                             Log.d(TAG, "Authentication successful");
                         } else {
