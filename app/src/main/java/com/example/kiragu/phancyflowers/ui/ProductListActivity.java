@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.widget.TextView;
 
+import com.example.kiragu.phancyflowers.MainActivity;
 import com.example.kiragu.phancyflowers.R;
 import com.example.kiragu.phancyflowers.adapter.RecyclerViewAdapter;
 import com.example.kiragu.phancyflowers.models.Product;
@@ -97,5 +98,9 @@ public class ProductListActivity extends AppCompatActivity {
     }
     private void logout() {
         FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(ProductListActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }
