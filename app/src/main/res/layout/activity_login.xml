@@ -12,7 +12,10 @@
         android:layout_height="match_parent"
         android:background="@drawable/back"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"/>
+        tools:layout_editor_absoluteY="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -25,7 +28,7 @@
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/emailTextView"
+        android:id="@+id/emailEditView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -37,27 +40,27 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/emailTextView"
-        android:layout_alignRight="@+id/emailTextView"
-        android:layout_below="@+id/emailTextView"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="14dp"
         android:hint=" Password"
         android:ems="10"
         android:drawableLeft="@drawable/ic_https_white_24dp"
         android:textColorHint="@color/colorWhite"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:layout_below="@+id/emailEditView1"
+        android:layout_alignLeft="@+id/emailEditView1"
+        android:layout_alignStart="@+id/emailEditView1" />
 
     <Button
         android:id="@+id/loginButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="36dp"
         android:text="Login"
-        android:layout_below="@+id/password"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@+id/passwordEditText"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/loginTextView"
@@ -65,9 +68,9 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorWhite"
         android:text="Dont have an Account? Sign Up here!"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/password"
-        android:layout_alignStart="@+id/password"
-        android:layout_marginBottom="19dp" />
+        android:layout_below="@+id/loginButton1"
+        android:layout_alignLeft="@+id/passwordEditText"
+        android:layout_alignStart="@+id/passwordEditText"
+        android:layout_marginTop="40dp" />
 
 </RelativeLayout>
