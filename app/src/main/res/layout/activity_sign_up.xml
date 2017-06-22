@@ -55,7 +55,7 @@
         android:layout_alignStart="@+id/nameEditText" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -69,7 +69,7 @@
         android:layout_alignStart="@+id/emailTextView" />
 
     <EditText
-        android:id="@+id/confirmPassword"
+        android:id="@+id/confirmPasswordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -78,28 +78,28 @@
         android:hint="Confirm password"
         android:textColorHint="@color/colorWhite"
         android:inputType="textPassword"
-        android:layout_below="@+id/password"
-        android:layout_alignLeft="@+id/password"
-        android:layout_alignStart="@+id/password" />
+        android:layout_below="@+id/passwordEditText"
+        android:layout_alignLeft="@+id/passwordEditText"
+        android:layout_alignStart="@+id/passwordEditText" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/signUpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/confirmPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
-        android:text="Sign Up" />
+        android:layout_marginTop="11dp"
+        android:text="Sign Up"
+        android:layout_below="@+id/confirmPasswordEditText"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/signUpTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
         android:textColor="@color/colorWhite"
-        android:text="Already have an account?Login In here!" />
+        android:text="Already have an account?Login In here!"
+        android:layout_below="@+id/signUpButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp" />
 
 
 </RelativeLayout>

@@ -30,7 +30,7 @@ public class ProductPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return mProducts.size();
+        return (mProducts == null) ? 0 : mProducts.size();
     }
 
     @Override
