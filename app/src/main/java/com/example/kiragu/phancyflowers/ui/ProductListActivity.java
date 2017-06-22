@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.kiragu.phancyflowers.R;
 import com.example.kiragu.phancyflowers.adapter.RecyclerViewAdapter;
 import com.example.kiragu.phancyflowers.models.Product;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,5 +84,18 @@ public class ProductListActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_logout) {
+            logout();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
     }
 }
