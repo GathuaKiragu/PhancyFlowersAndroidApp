@@ -1,9 +1,11 @@
 package com.example.kiragu.phancyflowers.models;
 
+import org.parceler.Parcel;
+
 /**
  * Created by kiragu on 6/21/17.
  */
-
+@Parcel
 public class Product {
     private String name;
     private int photo;
@@ -12,6 +14,9 @@ public class Product {
         this.name = name;
         this.photo = photo;
     }
+
+//    empty constructor for parceler
+    public Product(){}
 
     public String getName() {
         return name;

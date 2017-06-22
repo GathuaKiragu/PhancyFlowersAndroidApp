@@ -1,11 +1,15 @@
 package com.example.kiragu.phancyflowers.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewAnimationUtils;
+import android.widget.TextView;
 
 import com.example.kiragu.phancyflowers.R;
 import com.example.kiragu.phancyflowers.adapter.RecyclerViewAdapter;
@@ -14,10 +18,13 @@ import com.example.kiragu.phancyflowers.models.Product;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+
 public class ProductListActivity extends AppCompatActivity {
-
-
     private StaggeredGridLayoutManager gaggeredGridLayoutManager;
+    @Bind(R.id.product_name)
+    TextView mProductName;
+    @Bind(R.id.product_photo) TextView mProductPhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +41,8 @@ public class ProductListActivity extends AppCompatActivity {
 
         RecyclerViewAdapter rcAdapter = new RecyclerViewAdapter(ProductListActivity.this, gaggeredList);
         recyclerView.setAdapter(rcAdapter);
-    }
+
+}
 
 
 //    @Override

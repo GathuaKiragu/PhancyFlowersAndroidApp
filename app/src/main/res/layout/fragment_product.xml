@@ -33,7 +33,7 @@
                 android:background="#80666666">
 
                 <TextView
-                    android:id="@+id/text"
+                    android:id="@+id/product_name1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -45,6 +45,7 @@
         </RelativeLayout>
 
         <TextView
+            android:id="@+id/descriptionTextView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10sp"
@@ -53,7 +54,7 @@ No nec tempor altera. An mei omnium atomorum, rebum fastidii vivendum id sea. Ex
             android:textSize="15sp" />
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
+            android:id="@+id/addToCartButton"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"

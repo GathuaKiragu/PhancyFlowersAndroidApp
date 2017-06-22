@@ -1,5 +1,7 @@
 package com.example.kiragu.phancyflowers.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -7,6 +9,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kiragu.phancyflowers.R;
+import com.example.kiragu.phancyflowers.models.Product;
+import com.example.kiragu.phancyflowers.ui.LoginActivity;
+import com.example.kiragu.phancyflowers.ui.ProductDetailActivity;
+import com.example.kiragu.phancyflowers.ui.ProductDetailFragment;
+import com.example.kiragu.phancyflowers.ui.ProductListActivity;
+
+import org.parceler.Parcels;
+
+import java.util.ArrayList;
 
 /**
  * Created by kiragu on 6/21/17.
@@ -15,6 +26,9 @@ import com.example.kiragu.phancyflowers.R;
 public class ProductsViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView productName;
     public ImageView productPhoto;
+
+    private ArrayList<Product> mProducts = new ArrayList<>();
+    private Context mContext;
 
     public ProductsViewHolder(View itemView) {
         super(itemView);
@@ -25,6 +39,5 @@ public class ProductsViewHolder  extends RecyclerView.ViewHolder implements View
 
     @Override
     public void onClick(View view) {
-        Toast.makeText(view.getContext(), "Clicked Position = " + getPosition(), Toast.LENGTH_SHORT).show();
     }
 }
