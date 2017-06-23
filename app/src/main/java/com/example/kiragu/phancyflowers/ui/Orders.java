@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kiragu.phancyflowers.R;
 import com.example.kiragu.phancyflowers.ui.LoginActivity;
@@ -35,7 +36,9 @@ public class Orders extends AppCompatActivity {
     }
 
     public void authorize(View v){
-        Intent intent = new Intent(Orders.this, LoginActivity.class);
+        Intent intent = new Intent(Orders.this, Products.class);
+        Toast.makeText(Orders.this, "Item has been added to cart!",
+                Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 }
