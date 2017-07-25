@@ -26,11 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        VideoView videoview = (VideoView) findViewById(R.id.videoView);
-        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.bg);
-        videoview.setVideoURI(uri);
-        videoview.start();
-
         mLoginButton.setOnClickListener(this);
         mSignUpButton.setOnClickListener(this);
 

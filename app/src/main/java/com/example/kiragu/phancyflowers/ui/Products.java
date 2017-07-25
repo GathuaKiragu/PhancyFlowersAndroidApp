@@ -25,12 +25,11 @@ import java.util.ArrayList;
 public class Products extends AppCompatActivity {
     private Toolbar toolbar;
 
-    private final String recyclerViewTitleText[] = {"Blossom Flower", "Flower", "Indoor Plants", "Gift_flowers", "Potted Flowers", "Tropical Plants", "Rose Flower", "Moss", "Fern", "Potted Plants", "Tulips", "Tropical"
+    private final String recyclerViewTitleText[] = {"Blossom Flower", "Flower", "Moss", "Fern"
     };
 
     private final int recyclerViewImages[] = {
-            R.drawable.fern, R.drawable.flowerblog, R.drawable.indoor, R.drawable.gift_flowers, R.drawable.pottedflower, R.drawable.tropical,
-            R.drawable.flow, R.drawable.moss, R.drawable.fern, R.drawable.pottedflower, R.drawable.tulips, R.drawable.tropical
+            R.drawable.fern, R.drawable.flowerblog, R.drawable.indoor, R.drawable.gift_flowers
     };
 
 

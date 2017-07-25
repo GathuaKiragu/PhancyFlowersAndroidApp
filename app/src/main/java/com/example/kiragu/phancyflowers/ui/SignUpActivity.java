@@ -41,7 +41,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressDialog mAuthProgressDialog;
-    private String mName;
 
 
     @Override
@@ -115,7 +114,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
                         if (task.isSuccessful()) {
                             Log.d(TAG, "Authentication successful");
-                            createFirebaseUserProfile(task.getResult().getUser());
                         } else {
                             Toast.makeText(SignUpActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
@@ -170,22 +168,4 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         return true;
     }
     //Method to save username to firebase
-    private void createFirebaseUserProfile(final FirebaseUser user) {
-
-        UserProfileChangeRequest addProfileName = new UserProfileChangeRequest.Builder()
-                .setDisplayName(mName)
-                .build();
-
-        user.updateProfile(addProfileName)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Log.d(TAG, user.getDisplayName());
-                        }
-                    }
-
-                });
-    }
 }
